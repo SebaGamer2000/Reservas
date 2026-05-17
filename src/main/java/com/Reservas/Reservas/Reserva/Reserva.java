@@ -13,16 +13,14 @@ import lombok.NoArgsConstructor;
 @Table(name = "Reservas")
 public class Reserva {
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Id
-    @GeneratedValue
+    @Column
     private Long idUsuario;
 
-    @Id
-    @GeneratedValue
-    private Long idSesion;
+    @Column
+    private Long idClase;
 
     @Column(nullable = false)
     private String fecha;

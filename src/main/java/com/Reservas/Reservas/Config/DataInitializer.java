@@ -22,12 +22,12 @@ public class DataInitializer implements CommandLineRunner {
         }
         log.info("No hay datos guardados");
 
-        reservaRepository.save(
-                new Reserva(null, null, null, "12/07/2026", "Confirmada")
-        );
+ //       reservaRepository.save(
+   //             new Reserva(null, null, "12/07/2026", "Confirmada")
+     //   );
 
-        reservaRepository.save(
-                new Reserva(null, null, null, "23/06/2026","Rechazada")
-        );
+     //   reservaRepository.save(
+ //               new Reserva(null, null, null, "23/06/2026","Rechazada")
+    //    );
     }
 }

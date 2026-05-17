@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class ReservaResponseDTO {
     private Long id;
     private Long idUsuario;
-    private Long idSesion;
+    private Long idClase;
     private String fecha;
     private String estado;
 }
