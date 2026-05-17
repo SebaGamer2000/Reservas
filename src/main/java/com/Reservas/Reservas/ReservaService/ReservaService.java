@@ -44,14 +44,14 @@ public class ReservaService {
     public ReservaResponseDTO guardar(ReservaRequestDTO dto){
         UsuarioDTO usuarioDTO = webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8081/gym/socios/" + dto.getIdUsuario())
+                .uri("http://USUARIO/gym/socios/" + dto.getIdUsuario())
                 .retrieve()
                 .bodyToMono(UsuarioDTO.class)
                 .block();
 
         ClaseDTO claseDTO = webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8084/api/clases/" + dto.getIdClase())
+                .uri("http://CLASES/api/clases/" + dto.getIdClase())
                 .retrieve()
                 .onStatus(status -> status.is4xxClientError(), response ->
                         Mono.error(new RuntimeException("La clase con id " + dto.getIdClase() + " no existe."))
