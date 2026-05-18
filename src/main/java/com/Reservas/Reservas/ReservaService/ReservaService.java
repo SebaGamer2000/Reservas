@@ -38,12 +38,13 @@ public class ReservaService {
                 reserva.getEstado()
         );
     }
+    //Listar todas las reservas
     public List<ReservaResponseDTO> findAll(){
         return reservaRepository.findAll().stream().map(this::maptoDTO).collect(Collectors.toList());
     }
-
+    //Encontrar reserva por ID
     public Optional<ReservaResponseDTO> findById(Long id) {return reservaRepository.findById(id).map(this::maptoDTO);}
-
+    //Guarda una reserva usando idUsuario del microservicio usuarios e idClases del microservicio clases
     public ReservaResponseDTO guardar(ReservaRequestDTO dto){
         log.info("Guardando reserva...");
         UsuarioDTO usuarioDTO = webClientBuilder.build()
@@ -83,7 +84,7 @@ public class ReservaService {
         log.info("Reserva guardada");
         return maptoDTO(reservaRepository.save(reserva));
     }
-
+    //Actualiza una reserva
     public Optional<ReservaResponseDTO> actualizar(Long id, ReservaRequestDTO dto){
         return reservaRepository.findById(id).map(existente->{
             existente.setFecha(dto.getFecha());
@@ -92,7 +93,7 @@ public class ReservaService {
             return maptoDTO(reservaRepository.save(existente));
         });
     }
-
+    //Elimina una reserva
     public void eliminar(Long id){reservaRepository.deleteById(id);}{
         log.info("Reserva eliminada correctamente");
     }

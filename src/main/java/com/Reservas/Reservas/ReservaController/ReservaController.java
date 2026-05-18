@@ -15,29 +15,31 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ReservaController {
     private final ReservaService reservaService;
-
+    //GetMapping para listar reservas
     @GetMapping
     public ResponseEntity<List<ReservaResponseDTO>> findAll(){
         return ResponseEntity.ok(reservaService.findAll());
     }
-
+    //GetMapping para listar reservas por ID
     @GetMapping("{id}")
     public ResponseEntity<ReservaResponseDTO> findById(@PathVariable Long id){
         return reservaService.findById(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
-
+    //PostMapping para crear y guardar reservas
     @PostMapping
     public ResponseEntity<ReservaResponseDTO> crear(
             @Valid @RequestBody ReservaRequestDTO dto
             ){
         return ResponseEntity.status(201).body(reservaService.guardar(dto));
     }
+    //PutMapping para actualizar una reserva usando su ID
     @PutMapping("{id}")
     public ResponseEntity<ReservaResponseDTO> actualizar(
             @PathVariable Long id, @Valid @RequestBody ReservaRequestDTO dto
     ){
         return reservaService.actualizar(id,dto).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
+    //DeleteMapping para eliminar una reserva
     @DeleteMapping("{id}")
     public ResponseEntity<Void> eliminar (@PathVariable Long id){
         if (reservaService.findById(id).isEmpty()){

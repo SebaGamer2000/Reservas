@@ -248,3 +248,153 @@
 2026-05-17T20:43:57.841-04:00  INFO 9768 --- [Reservas] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
 2026-05-17T20:43:57.911-04:00  INFO 9768 --- [Reservas] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083 - deregister  status: 200
 2026-05-17T20:43:57.915-04:00  INFO 9768 --- [Reservas] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-05-17T22:07:51.730-04:00  INFO 22012 --- [Reservas] [main] c.Reservas.Reservas.ReservasApplication  : Starting ReservasApplication using Java 21.0.10 with PID 22012 (C:\Users\sebit\Desktop\Universidad\Programacion\Fullstack I\Reservas\target\classes started by sebit in C:\Users\sebit\Desktop\Universidad\Programacion\Fullstack I\Reservas)
+2026-05-17T22:07:51.742-04:00 DEBUG 22012 --- [Reservas] [main] c.Reservas.Reservas.ReservasApplication  : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-17T22:07:51.745-04:00  INFO 22012 --- [Reservas] [main] c.Reservas.Reservas.ReservasApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-05-17T22:07:56.753-04:00  INFO 22012 --- [Reservas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-17T22:07:57.543-04:00  INFO 22012 --- [Reservas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 752 ms. Found 1 JPA repository interface.
+2026-05-17T22:07:59.468-04:00  INFO 22012 --- [Reservas] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c029d77d-e515-30d9-ae94-3f6bc3984af8
+2026-05-17T22:08:01.394-04:00  INFO 22012 --- [Reservas] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8083 (http)
+2026-05-17T22:08:01.466-04:00  INFO 22012 --- [Reservas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-17T22:08:01.467-04:00  INFO 22012 --- [Reservas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-17T22:08:01.910-04:00  INFO 22012 --- [Reservas] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 9865 ms
+2026-05-17T22:08:02.799-04:00  INFO 22012 --- [Reservas] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-17T22:08:03.202-04:00  INFO 22012 --- [Reservas] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-17T22:08:04.975-04:00  INFO 22012 --- [Reservas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-17T22:08:05.096-04:00  INFO 22012 --- [Reservas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-17T22:08:05.584-04:00  INFO 4100 --- [Reservas] [main] c.Reservas.Reservas.ReservasApplication  : Starting ReservasApplication using Java 21.0.10 with PID 4100 (C:\Users\sebit\Desktop\Universidad\Programacion\Fullstack I\Reservas\target\classes started by sebit in C:\Users\sebit\Desktop\Universidad\Programacion\Fullstack I\Reservas)
+2026-05-17T22:08:05.607-04:00 DEBUG 4100 --- [Reservas] [main] c.Reservas.Reservas.ReservasApplication  : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-17T22:08:05.617-04:00  INFO 4100 --- [Reservas] [main] c.Reservas.Reservas.ReservasApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-05-17T22:08:05.650-04:00  INFO 22012 --- [Reservas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b0e5d5f
+2026-05-17T22:08:05.657-04:00  INFO 22012 --- [Reservas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-17T22:08:05.800-04:00  WARN 22012 --- [Reservas] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-17T22:08:05.810-04:00  WARN 22012 --- [Reservas] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-17T22:08:05.889-04:00  INFO 22012 --- [Reservas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/reservas_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: reservas_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-17T22:08:08.763-04:00  INFO 22012 --- [Reservas] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-17T22:08:08.980-04:00  INFO 4100 --- [Reservas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-17T22:08:08.984-04:00  INFO 22012 --- [Reservas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-17T22:08:09.193-04:00  INFO 22012 --- [Reservas] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-17T22:08:09.383-04:00  INFO 22012 --- [Reservas] [main] c.R.R.ReservaService.ReservaService      : Reserva eliminada correctamente
+2026-05-17T22:08:09.421-04:00  INFO 4100 --- [Reservas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 403 ms. Found 1 JPA repository interface.
+2026-05-17T22:08:09.583-04:00  WARN 22012 --- [Reservas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-17T22:08:09.945-04:00  WARN 22012 --- [Reservas] [main] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2026-05-17T22:08:10.227-04:00  WARN 22012 --- [Reservas] [main] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2026-05-17T22:08:10.504-04:00  INFO 22012 --- [Reservas] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-05-17T22:08:10.607-04:00  INFO 4100 --- [Reservas] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c029d77d-e515-30d9-ae94-3f6bc3984af8
+2026-05-17T22:08:13.182-04:00  INFO 22012 --- [Reservas] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
+2026-05-17T22:08:13.193-04:00  INFO 4100 --- [Reservas] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8083 (http)
+2026-05-17T22:08:13.373-04:00  WARN 22012 --- [Reservas] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-05-17T22:08:13.511-04:00  INFO 22012 --- [Reservas] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-05-17T22:08:13.649-04:00  INFO 22012 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-05-17T22:08:13.664-04:00  INFO 22012 --- [Reservas] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-17T22:08:13.668-04:00  INFO 4100 --- [Reservas] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 7883 ms
+2026-05-17T22:08:13.704-04:00  INFO 22012 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-05-17T22:08:13.705-04:00  INFO 22012 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-05-17T22:08:13.705-04:00  INFO 22012 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-05-17T22:08:13.705-04:00  INFO 22012 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-05-17T22:08:13.706-04:00  INFO 22012 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-05-17T22:08:13.706-04:00  INFO 22012 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-05-17T22:08:13.706-04:00  INFO 22012 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-05-17T22:08:14.614-04:00  INFO 4100 --- [Reservas] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-17T22:08:14.808-04:00  INFO 4100 --- [Reservas] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-17T22:08:15.206-04:00  INFO 22012 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-05-17T22:08:15.213-04:00  INFO 22012 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-05-17T22:08:15.306-04:00  INFO 22012 --- [Reservas] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-05-17T22:08:15.320-04:00  INFO 22012 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1779070095316 with initial instances count: 3
+2026-05-17T22:08:15.334-04:00  INFO 22012 --- [Reservas] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application RESERVAS with eureka with status UP
+2026-05-17T22:08:15.336-04:00  INFO 22012 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1779070095336, current=UP, previous=STARTING]
+2026-05-17T22:08:15.341-04:00  INFO 22012 --- [Reservas] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083: registering service...
+2026-05-17T22:08:15.411-04:00  INFO 22012 --- [Reservas] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8083 (http) with context path '/'
+2026-05-17T22:08:15.416-04:00  INFO 22012 --- [Reservas] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8083
+2026-05-17T22:08:15.532-04:00  INFO 22012 --- [Reservas] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083 - registration status: 204
+2026-05-17T22:08:15.562-04:00  INFO 22012 --- [Reservas] [main] c.Reservas.Reservas.ReservasApplication  : Started ReservasApplication in 25.551 seconds (process running for 28.322)
+2026-05-17T22:08:16.664-04:00  INFO 4100 --- [Reservas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-17T22:08:16.742-04:00  INFO 4100 --- [Reservas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-17T22:08:16.862-04:00  INFO 22012 --- [Reservas] [main] c.R.Reservas.Config.DataInitializer      : Datos cargados
+2026-05-17T22:08:17.111-04:00  INFO 4100 --- [Reservas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@34d11c92
+2026-05-17T22:08:17.113-04:00  INFO 4100 --- [Reservas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-17T22:08:17.185-04:00  WARN 4100 --- [Reservas] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-17T22:08:17.190-04:00  WARN 4100 --- [Reservas] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-17T22:08:17.223-04:00  INFO 4100 --- [Reservas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/reservas_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: reservas_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-17T22:08:18.677-04:00  INFO 4100 --- [Reservas] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-17T22:08:18.777-04:00  INFO 4100 --- [Reservas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-17T22:08:18.922-04:00  INFO 4100 --- [Reservas] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-17T22:08:19.137-04:00  INFO 4100 --- [Reservas] [main] c.R.R.ReservaService.ReservaService      : Reserva eliminada correctamente
+2026-05-17T22:08:19.330-04:00  WARN 4100 --- [Reservas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-17T22:08:19.621-04:00  WARN 4100 --- [Reservas] [main] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2026-05-17T22:08:19.828-04:00  WARN 4100 --- [Reservas] [main] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2026-05-17T22:08:20.005-04:00  INFO 4100 --- [Reservas] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-05-17T22:08:24.735-04:00  INFO 4100 --- [Reservas] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
+2026-05-17T22:08:25.486-04:00  WARN 4100 --- [Reservas] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-05-17T22:08:25.699-04:00  INFO 4100 --- [Reservas] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-05-17T22:08:25.806-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-05-17T22:08:25.823-04:00  INFO 4100 --- [Reservas] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-17T22:08:25.859-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-05-17T22:08:25.860-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-05-17T22:08:25.860-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-05-17T22:08:25.861-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-05-17T22:08:25.861-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-05-17T22:08:25.862-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-05-17T22:08:25.866-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-05-17T22:08:27.600-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-05-17T22:08:27.606-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-05-17T22:08:27.616-04:00  INFO 4100 --- [Reservas] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-05-17T22:08:27.625-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1779070107620 with initial instances count: 3
+2026-05-17T22:08:27.638-04:00  INFO 4100 --- [Reservas] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application RESERVAS with eureka with status UP
+2026-05-17T22:08:27.641-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1779070107641, current=UP, previous=STARTING]
+2026-05-17T22:08:27.648-04:00  INFO 4100 --- [Reservas] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083: registering service...
+2026-05-17T22:08:27.788-04:00  INFO 4100 --- [Reservas] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application RESERVAS with eureka with status DOWN
+2026-05-17T22:08:27.794-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1779070107794, current=DOWN, previous=UP]
+2026-05-17T22:08:27.800-04:00  WARN 4100 --- [Reservas] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-05-17T22:08:27.818-04:00  INFO 4100 --- [Reservas] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-17T22:08:27.826-04:00  INFO 4100 --- [Reservas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-17T22:08:27.842-04:00  INFO 4100 --- [Reservas] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083 - registration status: 204
+2026-05-17T22:08:27.844-04:00  INFO 4100 --- [Reservas] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083: registering service...
+2026-05-17T22:08:27.857-04:00  INFO 4100 --- [Reservas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-17T22:08:27.859-04:00  INFO 4100 --- [Reservas] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083 - registration status: 204
+2026-05-17T22:08:27.859-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-05-17T22:08:30.875-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-05-17T22:08:30.907-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083 - deregister  status: 200
+2026-05-17T22:08:30.907-04:00  INFO 4100 --- [Reservas] [main] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-05-17T22:08:45.337-04:00  INFO 22012 --- [Reservas] [DiscoveryClient-HeartbeatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083 - Re-registering apps/RESERVAS
+2026-05-17T22:08:45.338-04:00  INFO 22012 --- [Reservas] [DiscoveryClient-HeartbeatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083: registering service...
+2026-05-17T22:08:45.352-04:00  INFO 22012 --- [Reservas] [DiscoveryClient-HeartbeatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083 - registration status: 204
+2026-05-17T22:10:30.906-04:00  INFO 22012 --- [Reservas] [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-17T22:10:30.908-04:00  INFO 22012 --- [Reservas] [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-17T22:10:30.937-04:00  INFO 22012 --- [Reservas] [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 26 ms
+2026-05-17T22:13:13.722-04:00  INFO 22012 --- [Reservas] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-17T22:14:09.113-04:00  INFO 22012 --- [Reservas] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application RESERVAS with eureka with status DOWN
+2026-05-17T22:14:09.114-04:00  INFO 22012 --- [Reservas] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1779070449114, current=DOWN, previous=UP]
+2026-05-17T22:14:09.115-04:00  INFO 22012 --- [Reservas] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083: registering service...
+2026-05-17T22:14:09.124-04:00  INFO 22012 --- [Reservas] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-17T22:14:09.135-04:00  INFO 22012 --- [Reservas] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083 - registration status: 204
+2026-05-17T22:14:09.144-04:00  INFO 22012 --- [Reservas] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-17T22:14:09.226-04:00  INFO 22012 --- [Reservas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-17T22:14:09.244-04:00  INFO 22012 --- [Reservas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-17T22:14:09.267-04:00  INFO 22012 --- [Reservas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-17T22:14:09.269-04:00  INFO 22012 --- [Reservas] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-05-17T22:14:12.278-04:00  INFO 22012 --- [Reservas] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-05-17T22:14:12.298-04:00  INFO 22012 --- [Reservas] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVAS/LAPTOP-TLGIUAT7:Reservas:8083 - deregister  status: 200
+2026-05-17T22:14:12.299-04:00  INFO 22012 --- [Reservas] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

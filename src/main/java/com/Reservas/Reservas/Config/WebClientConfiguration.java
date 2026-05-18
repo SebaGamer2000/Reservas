@@ -7,6 +7,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
 public class WebClientConfiguration {
+    //Configuracion para conectar con otros micrservicios
     @LoadBalanced
     @Bean
     public WebClient.Builder webClientBuilder() {
