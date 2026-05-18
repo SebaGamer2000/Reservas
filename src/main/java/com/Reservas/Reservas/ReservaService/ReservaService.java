@@ -8,6 +8,8 @@ import com.Reservas.Reservas.ReservaDTO.UsuarioDTO;
 import com.Reservas.Reservas.ReservaRepository.ReservaRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -21,6 +23,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ReservaService {
     private final ReservaRepository reservaRepository;
+    private static final Logger log = LoggerFactory.getLogger(ReservaService.class);
 
 
     @Autowired
@@ -42,6 +45,7 @@ public class ReservaService {
     public Optional<ReservaResponseDTO> findById(Long id) {return reservaRepository.findById(id).map(this::maptoDTO);}
 
     public ReservaResponseDTO guardar(ReservaRequestDTO dto){
+        log.info("Guardando reserva...");
         UsuarioDTO usuarioDTO = webClientBuilder.build()
                 .get()
                 .uri("http://USUARIO/gym/socios/" + dto.getIdUsuario())
@@ -60,10 +64,12 @@ public class ReservaService {
                 .block();
 
         if (claseDTO.getCupos() <= 0) {
+            log.warn("Esta clase no tiene cupos disponibles");
             throw new RuntimeException("La clase no tiene cupos disponibles.");
         }
 
         if (usuarioDTO == null) {
+            log.warn("No se puede guardar la reserva porque este socio no existe");
             throw new RuntimeException("No se puede confirmar la reserva: El socio no existe o está Inactivo.");
         }
 
@@ -74,6 +80,7 @@ public class ReservaService {
                 dto.getFecha(),
                 dto.getEstado()
         );
+        log.info("Reserva guardada");
         return maptoDTO(reservaRepository.save(reserva));
     }
 
@@ -81,9 +88,12 @@ public class ReservaService {
         return reservaRepository.findById(id).map(existente->{
             existente.setFecha(dto.getFecha());
             existente.setEstado(dto.getEstado());
+            log.info("Reserva actualizada correctamente");
             return maptoDTO(reservaRepository.save(existente));
         });
     }
 
-    public void eliminar(Long id){reservaRepository.deleteById(id);}
+    public void eliminar(Long id){reservaRepository.deleteById(id);}{
+        log.info("Reserva eliminada correctamente");
+    }
 }
