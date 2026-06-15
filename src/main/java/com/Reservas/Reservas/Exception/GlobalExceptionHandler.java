@@ -6,45 +6,44 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-    //Se activa al haber un error con @Valid
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<Map<String, String>> handleValidationErrors(
-            MethodArgumentNotValidException ex
-    ){
-        Map<String, String> errores = new LinkedHashMap<>();
 
-        ex.getBindingResult().getFieldErrors().forEach(error -> errores.put(error.getField(),error.getDefaultMessage()));
-        return ResponseEntity.badRequest().body(errores);
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ApiError> handleValidation(MethodArgumentNotValidException ex) {
+        String mensajes = ex.getBindingResult().getFieldErrors()
+                .stream()
+                .map(e -> e.getField() + ": " + e.getDefaultMessage())
+                .collect(Collectors.joining(", "));
+        return ResponseEntity.badRequest().body(
+                new ApiError(400, "Bad Request", mensajes, LocalDateTime.now())
+        );
     }
-    //Se activa al haber un RuntimeException
+
     @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<Map<String, String>> handleRuntimeException(
-            RuntimeException ex
-    ){
-        Map<String, String> error = new LinkedHashMap<>();
-        error.put("error", ex.getMessage());
-        return ResponseEntity.badRequest().body(error);
+    public ResponseEntity<ApiError> handleRuntime(RuntimeException ex) {
+        return ResponseEntity.badRequest().body(
+                new ApiError(400, "Bad Request", ex.getMessage(), LocalDateTime.now())
+        );
     }
-    //Se activa al no encontrar algun recurso
+
     @ExceptionHandler(NoSuchElementException.class)
-    public ResponseEntity<Map<String, String>> handleNotFound(
-            NoSuchElementException ex) {
-        Map<String, String> error = new LinkedHashMap<>();
-        error.put("error", "Recurso no encontrado");
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    public ResponseEntity<ApiError> handleNotFound(NoSuchElementException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                new ApiError(404, "Not Found", "Recurso no encontrado", LocalDateTime.now())
+        );
     }
-    //Se activa al ocurrir un error interno en el servidor
+
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<Map<String, String>> handleGeneral(
-            Exception ex) {
-        Map<String, String> error = new LinkedHashMap<>();
-        error.put("error", "Error interno del servidor");
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
+    public ResponseEntity<ApiError> handleGeneral(Exception ex) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(
+                new ApiError(500, "Internal Server Error", "Error interno del servidor", LocalDateTime.now())
+        );
     }
 }
