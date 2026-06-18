@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+
 @RestController
 @RequestMapping("/api/Reservas")
 @RequiredArgsConstructor
@@ -17,20 +20,28 @@ public class ReservaController {
     private final ReservaService reservaService;
     //GetMapping para listar reservas
     @GetMapping
-    public ResponseEntity<List<ReservaResponseDTO>> findAll(){
-        return ResponseEntity.ok(reservaService.findAll());
+    public ResponseEntity<List<ReservaResponseDTO>> findAll(){List<ReservaResponseDTO> lista = reservaService.findAll();
+        lista.forEach(dto ->
+                dto.add(linkTo(methodOn(ReservaController.class).findById(dto.getId())).withSelfRel())
+        );return ResponseEntity.ok(reservaService.findAll());
     }
     //GetMapping para listar reservas por ID
     @GetMapping("{id}")
-    public ResponseEntity<ReservaResponseDTO> findById(@PathVariable Long id){
-        return reservaService.findById(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+    public ResponseEntity<ReservaResponseDTO> findById(@PathVariable Long id){return reservaService.findById(id)
+            .map(dto -> {
+                dto.add(linkTo(methodOn(ReservaController.class).findById(id)).withSelfRel());
+                dto.add(linkTo(methodOn(ReservaController.class).findAll()).withRel("todas"));
+                return ResponseEntity.ok(dto);
+            }).orElse(ResponseEntity.notFound().build());
     }
     //PostMapping para crear y guardar reservas
     @PostMapping
     public ResponseEntity<ReservaResponseDTO> crear(
             @Valid @RequestBody ReservaRequestDTO dto
-            ){
-        return ResponseEntity.status(201).body(reservaService.guardar(dto));
+            ){ReservaResponseDTO nueva = reservaService.guardar(dto);
+        nueva.add(linkTo(methodOn(ReservaController.class).findById(nueva.getId())).withSelfRel());
+        nueva.add(linkTo(methodOn(ReservaController.class).findAll()).withRel("todas"));
+    return ResponseEntity.status(201).body(nueva);
     }
     //PutMapping para actualizar una reserva usando su ID
     @PutMapping("{id}")
