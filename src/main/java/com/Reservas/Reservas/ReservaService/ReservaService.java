@@ -49,7 +49,7 @@ public class ReservaService {
         log.info("Guardando reserva...");
         UsuarioDTO usuarioDTO = webClientBuilder.build()
                 .get()
-                .uri("http://USUARIO/gym/socios/" + dto.getIdUsuario())
+                .uri("https://ms-usuarios-n9lf.onrender.com/gym/socios/" + dto.getIdUsuario())
                 .retrieve()
                 .bodyToMono(UsuarioDTO.class)
                 .block();
