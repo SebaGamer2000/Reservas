@@ -56,7 +56,7 @@ public class ReservaService {
 
         ClaseDTO claseDTO = webClientBuilder.build()
                 .get()
-                .uri("http://CLASES/api/clases/" + dto.getIdClase())
+                .uri("https://clases-a178.onrender.com/api/clases/" + dto.getIdClase())
                 .retrieve()
                 .onStatus(status -> status.is4xxClientError(), response ->
                         Mono.error(new RuntimeException("La clase con id " + dto.getIdClase() + " no existe."))
